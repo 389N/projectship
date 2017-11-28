@@ -16,8 +16,8 @@
 			<legend><em>Additional Information</em></legend>
 			Gender:
 				<br>
-				<input type="radio" name="gender" value="male"> Male <br>
-				<input type="radio" name="gender" value="female"> Female <br><br>
+				<input type="radio" name="gender" value="Male"> Male <br>
+				<input type="radio" name="gender" value="Female"> Female <br><br>
 			Major:
 				<br>
   				<input type="radio" name="major" value="Computer Science"> Computer Science<br>
@@ -25,10 +25,10 @@
   				<input type="radio" name="major" value="Engineering"> Engineering <br><br>
   			Grade:
   				<br>
-  				<input type="radio" name = "grade"> Senior <br>
-  				<input type="radio" name = "grade"> Junior <br>
-  				<input type="radio" name = "grade"> Sophomore <br>
-  				<input type="radio" name = "grade"> Freshmen <br>
+  				<input type="radio" name = "grade" value="Senior"> Senior <br>
+  				<input type="radio" name = "grade" value="Junior"> Junior <br>
+  				<input type="radio" name = "grade" value="Sophomore"> Sophomore <br>
+  				<input type="radio" name = "grade" value="Freshman"> Freshmen <br>
   				<br>
   			Number of Partners you are looking for:
   				<br>
