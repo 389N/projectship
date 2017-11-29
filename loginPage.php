@@ -24,9 +24,9 @@
 			<h4> <strong> <center> Please login </center> </strong>  </h4>
 
 			<b> <center> Email: </center></b>
-				<center> <input type="email" name="email" /> </center> <br><br>
+				<center> <input type="email" name="email" required="required"/> </center> <br><br>
 			<b> <center> Password: </center></b>
-				<center> <input type="password" name="password"/> </center> <br><br>
+				<center> <input type="password" name="password" required="required"/> </center> <br><br>
 			
 			<center> <input type="submit" name="loginButton" value = "Login" />
 			<input type="button" onclick="location.href='signupPage.php';" value="Sign Up" /> </center> <br>
@@ -39,6 +39,7 @@ BODY;
 	}
 
 	$bottomPart = "";
+
 	if (isset($_POST["loginButton"])) {
 		$email = trim($_POST["email"]);
 		$password = trim($_POST["password"]);
@@ -61,8 +62,9 @@ BODY;
 					$dbEmail = $row['email'];
 					$dbPass = $row['password'];
 					echo($dbEmail);
-					echo($dbPass . "<br>");
+
 					$passMatch = password_verify($password, $dbPass);
+					echo $passMatch ? 'true' : 'false';
 		     		if ($email == $dbEmail && $passMatch){
 			     		$verified = true;
 		     		}

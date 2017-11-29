@@ -1,5 +1,9 @@
 <?php
 	require_once("support.php");
+
+	if (session_id() == NULL) {
+		session_start();
+	}
 	
 	$body = <<<BODY
 		<form action="{$_SERVER["PHP_SELF"]}" method="post">
@@ -11,7 +15,7 @@
 				seek for new partners for their projects." </p> </center> <br>
 			<center> <input type="submit" name="profilePageButton" value = "Profile Page">
 			<input type="submit" name="matchingPageButton" value = "Matching Page"> </center><br>
-			<center> <input type="submit" name="backToMain" value = "Back to Login Page"> </center>
+			<center> <input type="submit" name="backToLogin" value = "Logout"> </center>
 		</form>
 BODY;
 
@@ -23,7 +27,8 @@ BODY;
 		header("Location: matchingPage.php");
 	}
 
-	if (isset($_POST["backToMain"])) {
+	if (isset($_POST["backToLogin"])) {
+		unset($_SESSION['currUser']);
 		header("Location: loginPage.php");
 	}
 	
