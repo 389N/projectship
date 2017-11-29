@@ -61,10 +61,8 @@ BODY;
 
 					$dbEmail = $row['email'];
 					$dbPass = $row['password'];
-					echo($dbEmail);
-
 					$passMatch = password_verify($password, $dbPass);
-					echo $passMatch ? 'true' : 'false';
+					
 		     		if ($email == $dbEmail && $passMatch){
 			     		$verified = true;
 		     		}
