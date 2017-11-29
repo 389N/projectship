@@ -12,7 +12,6 @@
 	if ($db_connection->connect_error) {
 		die($db_connection->connect_error);
 	}
-
 	
 	$topPart = <<<BODY
 		<form action="{$_SERVER["PHP_SELF"]}" method="post">

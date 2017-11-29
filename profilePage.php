@@ -1,4 +1,4 @@
-/<?php
+<?php
 	require_once("support.php");
 
 	if (session_id() == NULL) {
@@ -138,16 +138,12 @@
 			<fieldset>
 				<input type="reset" value ="Clear Form" />
 				<input type="submit" name="submitForm" value="Submit Information" />
-				<input type="submit" name="backToHome" value="Back to Homepage" />
+				<input type="button" onclick="location.href='homePage.php';" value="Home Page" />
 			</fieldset>
 		</form>
 BODY;
 	if (isset($_POST["submitForm"])) {
 		header("Location: confirmationPage.php");
-	}
-
-	if (isset($_POST["backToHome"])) {
-		header("Location: homePage.php");
 	}
 
 	$db_connection->close();

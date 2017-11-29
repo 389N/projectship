@@ -1,4 +1,4 @@
-/<?php
+<?php
 	require_once("support.php");
 
 	if (session_id() == NULL) {
