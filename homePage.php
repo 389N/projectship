@@ -194,7 +194,7 @@
 
 									<!-- LAYER NR. 6 -->
 									<div class="tp-caption   tp-resizeme  nopointerevent rs-parallaxlevel-1"
-										 id="slide-80-layer-10"
+										 id="slide-80-layer-20"
 										 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
 										 data-y="['top','top','top','top']" data-voffset="['188','136','124','527']"
 													data-fontsize="['20','20','18','25']"
@@ -215,7 +215,7 @@
 										data-textAlign="center"
 
 
-										style="z-index: 10; min-width: 390px; max-width: 390px; white-space: nowrap; font-size: 20px; line-height: 30px; font-weight: 900; color: rgba(255, 255, 255, 1.00);font-family:Lato;text-align:center;">Profile Page </div>
+										style="z-index: 12; min-width: 390px; max-width: 390px; white-space: nowrap; font-size: 20px; line-height: 30px; font-weight: 900; color: rgba(255, 255, 255, 1.00);font-family:Lato;text-align:center;">Profile Page </div>
 
 									<!-- LAYER NR. 7 -->
 									<div class="tp-caption   tp-resizeme  nopointerevent rs-parallaxlevel-1"
