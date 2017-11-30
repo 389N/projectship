@@ -24,9 +24,14 @@
 			<b> <center> Password: </center></b>
 				<center> <input type="password" name="password" required="required"/> </center> <br><br>
 			<b> <center> Re-enter Password: </center></b>
-				<center> <input type="password" name="repassword" required="required"/> </center> <br><br>
+				<center> 
+				<input type="password" name="repassword" required="required"/> 
+				</center> <br><br>
 			
-			<center> <input type="submit" name="createAccount" value = "Create Account" /> </center> <br>
+			<center> 
+			<input type="submit" name="createAccount" value = "Create Account" /> 
+			<input type="button" onclick="location.href='homePage.php';" value="Home Page" />
+			</center> <br>
 		</form>	
 BODY;
 	
