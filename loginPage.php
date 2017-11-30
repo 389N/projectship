@@ -1,3 +1,98 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Login</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap nopadding">
+
+				<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url('images/parallax/home/7.jpg') center center no-repeat; background-size: cover;"></div>
+
+				<div class="section nobg full-screen nopadding nomargin">
+					<div class="container vertical-middle divcenter clearfix">
+
+						<div class="row center">
+							<a href="main.html"><img src="logo-white.png" alt="Canvas Logo"></a>
+						</div>
+
+						<div class="panel panel-default divcenter noradius noborder" style="max-width: 400px; background-color: rgba(255,255,255,0.93);">
+							<div class="panel-body" style="padding: 40px;">
+								<form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
+									<h3>Login to your Account</h3>
+
+									<div class="col_full">
+										<label for="login-form-username">Email:</label>
+										<input type="email" name="email" required="required" id="login-form-username" value="" class="form-control not-dark" />
+									</div>
+
+									<div class="col_full">
+										<label for="login-form-password">Password:</label>
+										<input type="password" name="password" required="required" id="login-form-password" value="" class="form-control not-dark" />
+									</div>
+
+									<div class="col_full nobottommargin">
+										<input class="button button-3d button-black nomargin" type="submit" name="loginButton" value = "Login" />
+										<a href='signupPage.php' class="fright">Don't have an account?</a>
+									</div>
+								</form>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+
+</body>
+</html>
+
 <?php
 	require_once("support.php");
 
@@ -16,22 +111,6 @@
 	if ($db_connection->connect_error) {
 		die($db_connection->connect_error);
 	}
-	
-	$topPart = <<<BODY
-		<form action="{$_SERVER["PHP_SELF"]}" method="post">
-
-			<h1><center>Welcome to <br>  Projectship </center></h1>
-			<h4> <strong> <center> Please login </center> </strong>  </h4>
-
-			<b> <center> Email: </center></b>
-				<center> <input type="email" name="email" required="required"/> </center> <br><br>
-			<b> <center> Password: </center></b>
-				<center> <input type="password" name="password" required="required"/> </center> <br><br>
-			
-			<center> <input type="submit" name="loginButton" value = "Login" />
-			<input type="button" onclick="location.href='signupPage.php';" value="Sign Up" /> </center> <br>
-		</form>	
-BODY;
 	
 	if (isset($_SESSION["currUser"])) {
 		//session_unset();
@@ -84,7 +163,4 @@ BODY;
 	}
 
 	$db_connection->close();
-
-	$page = generatePage($topPart.$bottomPart, "Login");
-	echo $page;
 ?>
