@@ -19,6 +19,7 @@
 		die($db_connection->connect_error);
 	}
 
+	$profilesArray = [];
 	$usersArray = [];
 
 	$query = "select * from $table where email != \"$currUser\"";
@@ -33,6 +34,9 @@
 				$row = $result->fetch_array(MYSQLI_ASSOC);
 
 				$dbEmail = $row['email'];
+
+				$usersArray[$row_index] = $dbEmail;
+
 				$firstName = $row['firstname'];
 				$lastName = $row['lastname'];
 				$gender = $row['gender'];
@@ -41,11 +45,7 @@
 				$numPartners = $row['numpartners'];
 				$comments = $row['comments'];
 
-				$usersArray[$row_index] = "<h1>Name: ".$firstName." ".$lastName."</h1>
-										  Gender: ".$gender."<br>
-										  Major: ".$major."<br>
-										  Grade: ".$grade."<br>
-										  About: ".$comments."<br>";
+				$profilesArray[$dbEmail] = "<h1>Name: ".$firstName." ".$lastName."</h1> Gender: ".$gender."<br> Major: ".$major."<br> Grade: ".$grade."<br> About: ".$comments."<br>";
 			}
 		}
 		$result->close();
@@ -53,17 +53,21 @@
 		die("Retrieval failed: ". $db_connection->error);
 	}
 
-	//print_r($usersArray);
+	$currProfile = $usersArray[0];
+
+	$userEmailsJSON = json_encode($usersArray);
+	$profilesJSON = json_encode($profilesArray);
+
+	//print_r($profilesArray);
 
 
 
 	$body = <<<BODY
-
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<style>
 		.card {
 		  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-		  max-width: 300px;
+		  max-width: 500px;
 		  margin: auto;
 		  text-align: center;
 		  font-family: arial;
@@ -88,20 +92,56 @@
 		}
 		</style>
 
-		<center><h1> Here are the "Matched" friends! </h1></center><br>
-
-		<center>
-		<div class="card">
-		  $usersArray[0]
-		  <p><button>Contact</button></p>
-		</div>
-		
+		<center><h1> Here are the "Matched" friends! </h1><br>
 
 		<input type="button" id="prev" value="Previous Match">
 		<input type="button" id="next" value="Next Match">
 		<br><br>
 
+		<div class="card">
+			<div id="profile">
+			$profilesArray[$currProfile]
+			</div>
+		 	<p><button>Contact</button></p>
+		</div>
+		
+
+		
+
 		<input type="button" onclick="location.href='homePage.php';" value="Home Page" /> </center>
+
+		<script>
+			"use strict";
+
+			var profiles = $profilesJSON;
+			var emails = $userEmailsJSON;
+			var profileIndex = 0;
+
+			console.log(profiles);
+			console.log(emails);
+
+
+			document.getElementById("next").addEventListener("click", function() {
+				if (profileIndex < emails.length - 1) {
+					profileIndex++;
+					document.getElementById("profile").innerHTML = profiles[emails[profileIndex]];
+					
+				}
+			});
+
+			document.getElementById("prev").addEventListener("click", function() {
+				if (profileIndex > 0) {
+					profileIndex--;
+					document.getElementById("profile").innerHTML = profiles[emails[profileIndex]];
+				}
+			});
+
+
+
+		</script>
+
+
+
 BODY;
 	
 
