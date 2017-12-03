@@ -117,8 +117,9 @@
 				$grade = $row['grade'];
 				$numPartners = $row['numpartners'];
 				$comments = $row['comments'];
+				$profPic = $row['image'];
 
-				$profilesArray[$dbEmail] = "<h1>Name: ".$firstName." ".$lastName."</h1> Gender: ".$gender."<br> Major: ".$major."<br> Grade: ".$grade."<br> About: ".$comments."<br>";
+				$profilesArray[$dbEmail] = "<img src=\"" . $profPic . "\" alt=\"No Profile Picture\" width=250px height=250px><br>" . "<strong>Name: " . $firstName . " " . $lastName . "</strong><br> Gender: " . $gender . "<br> Major: " . $major . "<br> Grade: " . $grade . "<br> About: " . $comments . "<br>";
 			}
 		}
 		$result->close();
@@ -179,6 +180,7 @@
 		</div>	
 
 		<input type="button" onclick="location.href='homePage.php';" value="Home Page" /> </center>
+		<br>
 
 		<script>
 			"use strict";

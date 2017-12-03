@@ -31,7 +31,6 @@
 	$numPartners = 1;
 	$comments = "";
 
-
 	$query = "select * from $table";
 	$result = $db_connection->query($query);
 	if ($result) {
@@ -83,6 +82,7 @@
 
 						$numPartners = $row['numpartners'];
 						$comments = $row['comments'];
+						$profPic = $row['image'];
 				}
 
 
@@ -95,12 +95,15 @@
 
 
 	$body = <<<BODY
-		<form action="confirmationPage.php" method="post">
+		<form action="confirmationPage.php" method="post" enctype="multipart/form-data">
 			<center> <h2> Please fill the blanks. We will match you with people</h2></center>
 			<fieldset>
 			<legend><em>General Information</em></legend>
-			First Name: <input type = "text" name = "firstName" value="$firstName"> <br>
-			Last Name: <input type = "text" name = "lastName" value="$lastName"> <br>
+			First Name: <input type = "text" name = "firstName" value="$firstName" required="required"> <br>
+			Last Name: <input type = "text" name = "lastName" value="$lastName" required="required"> <br> <br>
+			Current profile picture: <br> <img src="$profPic" alt="None" width=200px height=200px> <br>
+			Change profile picture:
+			<input type="file" name="fileToUpload" id="fileToUpload"><br>
 			</fieldset>
 			<br>
 
@@ -137,14 +140,11 @@
 			<br>
 			<fieldset>
 				<input type="reset" value ="Clear Form" />
-				<input type="submit" name="submitForm" value="Submit Information" />
+				<input type="submit" name="submit" value="Submit Information" />
 				<input type="button" onclick="location.href='homePage.php';" value="Home Page" />
 			</fieldset>
 		</form>
 BODY;
-	if (isset($_POST["submitForm"])) {
-		header("Location: confirmationPage.php");
-	}
 
 	$db_connection->close();
 
