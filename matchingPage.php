@@ -175,12 +175,12 @@
 				<div class="section nobg full-screen nopadding nomargin">
 					<div class="container vertical-middle divcenter clearfix">
 		<br>
-		<br>
-		<br>		
-		<center><h1> Here are the "Matched" friends! </h1>
+		<br>	
+		<br>	
+		<center><h2> Here are the "Matched" friends! </h2>
 
 		<form action="{$_SERVER['PHP_SELF']}" method="post">
-			<h3><strong>Filter:</strong></h3>
+			<h5><strong>Filter:</strong></h5>
 
 			<!--SOMEONE MAKE THIS LOOK PRETTY-->
 
@@ -209,10 +209,10 @@
 
 			<br>
 
-			<input type="submit" class="btn btn-default btn-lg" name="submit" value="Filter Results">
+			<input type="submit" class="btn btn-default btn" name="submit" value="Filter Results">
 		</form>
-		<input type="button" class="btn btn-default btn-lg" id="prev" value="Previous Match"> 
-	    <input type="button" class="btn btn-default btn-lg" id="next" value="Next Match">
+		<input type="button" class="btn btn-default btn-sm" id="prev" value="Previous Match"> 
+	    <input type="button" class="btn btn-default btn-sm" id="next" value="Next Match">
 
 		<br><br>
 
@@ -223,6 +223,9 @@
 		</div>	
 
 		<input type="button" onclick="location.href='homePage.php';" class="btn btn-default" value="Home Page" /> </center>
+		<br>
+		<br>
+		<br>
 		<br>
 
 							</div>
