@@ -119,25 +119,83 @@ $query = "select * from $table";
 	}
 
 	$body = <<<BODY
-		<h1> Current Profile: </h1>
+	
+	<html>
+ <head>
 
-		Profile Picture: $uploadMsg <br> <img src="$profPic" alt="None" width=100px height=100px> <br>
-		First Name: $firstName <br>
-		Last Name: $lastName <br>
-		Gender: $gender <br>
-		Major: $major <br>
-		Grade: $grade <br>
-		Number of Partners: $numPartners <br>
-		Comments: $comments <br>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
 
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
 
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<h2> We will match you with people who share same interests. </h2>
+	<!-- Document Title
+	============================================= -->
+	<title>Login</title>
 
-		<input type="button" onclick="location.href='profilePage.php';" value="Edit Profile" />
-		<input type="button" onclick="location.href='homePage.php';" value="Home Page" />
+</head>
+            
+	<body>
+	
+	<div class="content-wrap nopadding">
+
+				<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url('startup-photos.jpg') center center no-repeat; background-size: cover;"></div>
+
+				<div class="section nobg full-screen nopadding nomargin">
+					<div class="container vertical-middle divcenter clearfix">
+
+						<div class="row center">
+							<a href="main.html"><img src="logo-white.png" alt="Canvas Logo"></a>
+						</div>
+
+						<div class="panel panel-default divcenter noradius noborder" style="max-width: 400px; background-color: rgba(255,255,255,0.93);">
+							<div class="panel-body" style="padding: 40px;">
+								<div class = "row">
+								
+		<center><strong> Current Profile: </strong></center>
+		<center><br> $uploadMsg <img src="$profPic" alt="None" width=100px height=100px> </center> <br> </br> 
+		<strong> <u>First Name</u>: $firstName </strong> <br>
+		<strong> <u>Last Name</u>: $lastName  </strong> <br>
+		<strong> <u>Gender</u>: $gender </strong> <br>
+		<strong> <u>Major</u>: $major </strong> <br>
+		<strong> <u>Grade</u>: $grade </strong> <br>
+		<strong> <u>Number of Partners</u>: $numPartners </strong> <br>
+		<strong> <u>Comments</u>: $comments </strong <br>
+		
+		<div class="col_full">
+		</br>
+		<h2> We will match you with people who share same interests! </h2>
+		</div>
+		<center>
+		<input type="button" onclick="location.href='profilePage.php';" value="Edit Profile" class = "btn btn-primary"/>
+		<input type="button" onclick="location.href='homePage.php';" value="Home Page" class = "btn btn-primary"/>
+		</center>
+	</div>
+		</body>
+		</html>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+	</div><!-- #wrapper end -->
+
 BODY;
 
-	$page = generatePage($body, "Profile");
-	echo $page;
+	echo $body;
 ?>
