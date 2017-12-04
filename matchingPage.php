@@ -170,12 +170,11 @@
 
 			<div class="content-wrap nopadding">
 
-				<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url('photo-1505860421472-7d74e0b4d98a.jpeg') center center no-repeat; background-size: cover;"></div>
+				<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url('photo-1505860421472-7d74e0b4d98a.jpeg') center center no-repeat; background-size: cover; overflow: scroll;"></div>
 
 				<div class="section nobg full-screen nopadding nomargin">
 					<div class="container vertical-middle divcenter clearfix">
-		<br>
-		<br>	
+	
 		<br>	
 		<center><h2> Here are the "Matched" friends! </h2>
 
