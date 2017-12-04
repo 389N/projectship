@@ -30,7 +30,7 @@
 			
 			<center> 
 			<input type="submit" name="createAccount" value = "Create Account" /> 
-			<input type="button" onclick="location.href='homePage.php';" value="Home Page" />
+			<input type="button" onclick="location.href='main.html';" value="Home Page" />
 			</center> <br>
 		</form>	
 BODY;
