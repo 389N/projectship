@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>Login</title>
+
+</head>
+
+<body class="stretched">
+
 <?php
 	require_once("support.php");
 
@@ -131,12 +159,28 @@
 	$profilesJSON = json_encode($profilesArray);
 
 	$body = <<<BODY
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap nopadding">
+
+				<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url('photo-1505860421472-7d74e0b4d98a.jpeg') center center no-repeat; background-size: cover;"></div>
+
+				<div class="section nobg full-screen nopadding nomargin">
+					<div class="container vertical-middle divcenter clearfix">
+		<br>
+		<br>
+		<br>		
 		<center><h1> Here are the "Matched" friends! </h1>
 
 		<form action="{$_SERVER['PHP_SELF']}" method="post">
-			<strong>Filter:</strong><br>
+			<h3><strong>Filter:</strong></h3>
 
 			<!--SOMEONE MAKE THIS LOOK PRETTY-->
 
@@ -165,12 +209,11 @@
 
 			<br>
 
-			<input type="submit" name="submit" value="Filter Results">
+			<input type="submit" class="btn btn-default btn-lg" name="submit" value="Filter Results">
 		</form>
-		<br>
+		<input type="button" class="btn btn-default btn-lg" id="prev" value="Previous Match"> 
+	    <input type="button" class="btn btn-default btn-lg" id="next" value="Next Match">
 
-		<input type="button" id="prev" value="Previous Match">
-		<input type="button" id="next" value="Next Match">
 		<br><br>
 
 		<div class="card">
@@ -179,8 +222,32 @@
 		 	<p><button>Contact</button></p>
 		</div>	
 
-		<input type="button" onclick="location.href='homePage.php';" value="Home Page" /> </center>
+		<input type="button" onclick="location.href='homePage.php';" class="btn btn-default" value="Home Page" /> </center>
 		<br>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
 
 		<script>
 			"use strict";
@@ -236,3 +303,5 @@ function getFilter($postArr, $category) {
 	$page = generatePage($body, "Matching");
 	echo $page;
 ?>
+</body>
+</html>
