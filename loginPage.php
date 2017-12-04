@@ -62,6 +62,7 @@
 
 									<div class="col_full nobottommargin">
 										<input class="button button-3d button-black nomargin" type="submit" name="loginButton" value = "Login" />
+										<input type="button" onclick="location.href='main.html';"  class="button button-3d button-black nomargin" value="Home Page" />
 										<a href='signupPage.php' class="fright">Don't have an account?</a>
 									</div>
 								</form>
