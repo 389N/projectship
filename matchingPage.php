@@ -9,22 +9,18 @@
 	============================================= -->
 	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Document Title
 	============================================= -->
-	<title>Login</title>
+	<title>Matching Page</title>
 
 </head>
 
-<body class="stretched">
+<body>
 
 <?php
 	require_once("support.php");
@@ -170,18 +166,17 @@
 
 			<div class="content-wrap nopadding">
 
-				<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: url('photo-1505860421472-7d74e0b4d98a.jpeg') center center no-repeat; background-size: cover; overflow: scroll;"></div>
+				<div class="section nopadding nomargin" style="width: 100%; height: 100%; position: absolute; left: 0; top: 0; background-size: cover; overflow: auto;"></div>
 
-				<div class="section nobg full-screen nopadding nomargin">
-					<div class="container vertical-middle divcenter clearfix">
-	
+				 <div class="section nobg full-screen nopadding nomargin">
+				 	<div class="container vertical-middle divcenter clearfix">	
+		<br>
 		<br>	
 		<center><h2> Here are the "Matched" friends! </h2>
+		<br>
 
 		<form action="{$_SERVER['PHP_SELF']}" method="post">
-			<h5><strong>Filter:</strong></h5>
-
-			<!--SOMEONE MAKE THIS LOOK PRETTY-->
+			<h2><strong>Filter:</strong></h2>
 
 			<span class="filter">Gender: <br> 
 			<input type="checkbox" name="gender[]" value="Male" $filterM>Male <br>
@@ -209,6 +204,8 @@
 			<br>
 
 			<input type="submit" class="btn btn-default btn" name="submit" value="Filter Results">
+			<br>
+			<br>
 		</form>
 		<input type="button" class="btn btn-default btn-sm" id="prev" value="Previous Match"> 
 	    <input type="button" class="btn btn-default btn-sm" id="next" value="Next Match">
@@ -220,13 +217,11 @@
 			</div>
 		 	<p><button>Contact</button></p>
 		</div>	
-
 		<input type="button" onclick="location.href='homePage.php';" class="btn btn-default" value="Home Page" /> </center>
 		<br>
 		<br>
 		<br>
 		<br>
-
 							</div>
 						</div>
 					</div>
