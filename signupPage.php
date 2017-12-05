@@ -31,7 +31,7 @@
 	  <br>
 	  <br>
 
-	 <form action="{$_SERVER["PHP_SELF"]}" method="post">
+	 <form action="{$_SERVER["PHP_SELF"]}" method="post" name="signup">
 	    <div class="form-group">
 	      <label for="email">Email:</label>
 	      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="required">
@@ -44,9 +44,26 @@
 	      <label for="pwd">Re-enter Password:</label>
 	      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="repassword" required="required">
 	    </div>
-	    <input type="submit" class="btn btn-default" name="createAccount" value = "Create Account" /> 
+	    <input type="submit" class="btn btn-default" id="submit" name="createAccount" value = "Create Account" /> 
 	    <input type="button" onclick="location.href='main.html';" class="btn btn-default" value="Home Page" />
 	  </form>
+
+	  <script> 
+	  	document.getElementById("submit").addEventListener("click", function() {
+	  		let email = document.forms["signup"]["email"];
+	  		let password = document.forms["signup"]["password"];
+	  		let repassword = document.forms["signup"]["repassword"];
+
+	  		if (email =="") {
+	  			alert("Please Enter Email");
+	  		}
+	  		if (password != repassword) {
+	  			alert("Passwords do not match!");
+	  		}
+
+	  	});
+	  </script>
+
 	</div>
 
 BODY;
